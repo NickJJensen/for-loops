@@ -8,9 +8,10 @@ export function getClientWithLeastBalance(array) {
   let min = array[0];
   for (let i = 0; i < array.length; i++) {
     if (array[i].balance < array[0].balance && array[i].balance > 0) {
-      return [array[i]]
+      min = array[i];
     }
   }
+  return [min];
 }
 
 // === TEST YOURSELF ===

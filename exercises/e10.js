@@ -7,10 +7,13 @@ export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
   let result = [];
   for (let i = 0; i < array.length; i++) {
-    array[i].name.toLowerCase()
-    if (array[i].name.toLowerCase().includes(letter)) {
-      result.push(array[i].name)
-    } 
+    for (let j = 0; j < array[i].name.length; j++) {
+      let regex = /[a-z]+/g;
+      let namesArr = array[i].name[j].toLowerCase();
+      if (namesArr.match(regex) == letter) {
+        result.push(array[i].name);
+      }
+    }
   }
   return result;
 }

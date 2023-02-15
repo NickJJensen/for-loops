@@ -6,14 +6,12 @@
 
 export function joinToString(array, separator) {
   // Your code goes here...
-  let result = '';
   let combined = [];
+  let result = '';
   for (let i = 0; i < array.length; i++) {
-    if (i < array.length) {
-      combined.push(array[i] + separator);
-    }
+    combined.push(array[i], separator);
   }
-  for (let j = 0; j < combined.length; j++) {
+  for (let j = 0; j < combined.length - 1; j++) {
     result += combined[j];
   }
   return result;

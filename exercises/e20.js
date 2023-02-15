@@ -5,16 +5,17 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
-  let aNames = [];
+  let nameA = [];
   let others = [];
+  let regex = /[a]+/g;
   for (let i = 0; i < array.length; i++) {
-    if (array[i].includes('a')) {
-      aNames.push(array[i]);
+    if (array[i].match(regex)) {
+      nameA.push(array[i]);
     } else {
       others.push(array[i]);
     }
   }
-  return [aNames, others];
+  return [nameA, others];
 }
 
 // === TEST YOURSELF ===
